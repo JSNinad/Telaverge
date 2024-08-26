@@ -1,0 +1,18 @@
+# Use the official Python image from the Docker Hub
+FROM python:3.10-slim
+
+# Set the working directory in the container
+WORKDIR /app
+
+# Copy the current directory contents into the container at /app
+COPY . /app
+
+# Install aiohttp
+RUN pip install aiohttp
+
+# Expose port 5001
+EXPOSE 5001
+
+# Run the application
+CMD ["python3", "server2.py"]
+
